@@ -558,6 +558,28 @@ button > img{
   margin-bottom: 2rem;
 }
 
+.circle {
+    border-radius: 50%;
+    width: 2.5rem;
+    height: 2.5rem;
+    background:#000000;
+    border:0.13rem solid #666666;
+    position:absolute;
+    top:-1.8rem;
+    right:23%;
+    /* width and height can be anything, as long as they're equal */
+}
+.arrow-up {
+    position:absolute;
+    width: 0;
+    height: 0;
+    top:36%;
+    left:27%;
+    border-left: 0.6rem solid transparent;
+    border-right: 0.6rem solid transparent;
+    border-bottom: 0.5rem solid #666666;
+}
+
 /*infobox*/
 .infobox-wrapper {
     display:none;

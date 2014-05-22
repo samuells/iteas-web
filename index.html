@@ -17,6 +17,7 @@
 
     <script src="https://maps.googleapis.com/maps/api/js?sensor=false"></script>
     <script type="text/javascript" src="http://google-maps-utility-library-v3.googlecode.com/svn/trunk/infobox/src/infobox.js"></script>
+    <script src="js/smooth-scroll.js"></script>
     <script>
       function initialize() {
         var map_canvas = document.getElementById('map_canvas');
@@ -71,10 +72,10 @@
 		<a href="#"><img class="logo" src="img/logo_iteas.png"></a>
 		<div>
 			<ul>
-				<li>SLUŽBY</li>
-				<li>REFERENCIE</li>
-				<li>O NÁS</li>
-				<li>KONTAKT</li>
+				<li><a data-scroll="" data-options="easing: easeInOutQuad; speed:500" href=".service">SLUŽBY</a></li>
+				<li><a data-scroll="" data-options="easing: easeInOutQuad; speed:1000" href=".referencie">REFERENCIE</a></li>
+				<li><a data-scroll="" data-options="easing: easeInOutQuad; speed:2000" href=".about">O NÁS</a></li>
+				<li><a data-scroll="" data-options="easing: easeInOutQuad; speed:2500" href=".contact">KONTAKT</a></li>
 			</ul>
 		</div>
 	</div>
@@ -207,7 +208,7 @@
 		</div>
 	</div>
 
-	<div class="section contact">
+	<div id="nav_contact" class="section contact">
 		<div class="pane">
 			<h1>KONTAKT</h1>
 			<div id="dashed">Budeme radi, ak nás <em>kontaktujete</em> prostredníctvom formulára.</div>
@@ -237,6 +238,11 @@
 				</span>
 				<div id="copyright">© 2014 All Rights Reserved. ITEAS, s.r.o.</div>
 			</div>
+			<a data-scroll="" data-options="easing: easeInOutQuad; speed:3000" href=".nav">
+			    <div class="circle">
+			        <div class="arrow-up"></div>
+			    </div>
+		    </a>
 		</div>
 
 
@@ -264,5 +270,8 @@
 	<script src="js/classie.js"></script>
 	<script src="js/skrollr.min.js"></script>
 	<script src="js/main.js"></script>
+	<script>
+    	smoothScroll.init();
+	</script>
 </body>
 </html>
