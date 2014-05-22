@@ -26,38 +26,7 @@
           zoom: 13,
           mapTypeId: google.maps.MapTypeId.ROADMAP,
           scrollwheel:false,
-	      styles:[
-				  {
-				    "stylers": [
-				      { "lightness": -80 },
-				      { "hue": "#00aeef" }
-				    ]
-				  },{
-				    "featureType": "water",
-				    "elementType": "geometry.fill",
-				    "stylers": [
-				      { "lightness": -26 }
-				    ]
-				  },{
-				    "featureType": "road.highway.controlled_access",
-				    "elementType": "geometry",
-				    "stylers": [
-				      { "lightness": 29 }
-				    ]
-				  },{
-				    "featureType": "road.highway.controlled_access",
-				    "elementType": "geometry.text",
-				    "stylers": [
-				      { "lightness": 17 }
-				    ]
-				  },{
-				    "featureType": "road.arterial",
-				    "elementType": "geometry.fill",
-				    "stylers": [
-				      { "lightness": -100 }
-				    ]
-				  }
-				]
+	      styles:[{"featureType":"all","elementType":"all","stylers":[{"invert_lightness":true},{"saturation":10},{"lightness":30},{"gamma":0.5},{"hue":"#435158"}]}]
         }
         var map = new google.maps.Map(map_canvas, map_options)
         // centering
