@@ -13,6 +13,89 @@
 
 	<!-- External links -->
 	<link href='http://fonts.googleapis.com/css?family=Roboto:300,400,700' rel='stylesheet' type='text/css'>
+
+
+    <script src="https://maps.googleapis.com/maps/api/js?sensor=false"></script>
+    <script type="text/javascript" src="http://google-maps-utility-library-v3.googlecode.com/svn/trunk/infobox/src/infobox.js"></script>
+    <script>
+      function initialize() {
+        var map_canvas = document.getElementById('map_canvas');
+        var loc = new google.maps.LatLng(48.150677, 17.137187);
+        var map_options = {
+          center: loc,
+          zoom: 13,
+          mapTypeId: google.maps.MapTypeId.ROADMAP,
+          scrollwheel:false,
+	      styles:[
+				  {
+				    "stylers": [
+				      { "lightness": -80 },
+				      { "hue": "#00aeef" }
+				    ]
+				  },{
+				    "featureType": "water",
+				    "elementType": "geometry.fill",
+				    "stylers": [
+				      { "lightness": -26 }
+				    ]
+				  },{
+				    "featureType": "road.highway.controlled_access",
+				    "elementType": "geometry",
+				    "stylers": [
+				      { "lightness": 29 }
+				    ]
+				  },{
+				    "featureType": "road.highway.controlled_access",
+				    "elementType": "geometry.text",
+				    "stylers": [
+				      { "lightness": 17 }
+				    ]
+				  },{
+				    "featureType": "road.arterial",
+				    "elementType": "geometry.fill",
+				    "stylers": [
+				      { "lightness": -100 }
+				    ]
+				  }
+				]
+        }
+        var map = new google.maps.Map(map_canvas, map_options)
+        // centering
+        var center;
+		function calculateCenter() {
+		  center = map.getCenter();
+		}
+		google.maps.event.addDomListener(map, 'idle', function() {
+		  calculateCenter();
+		});
+		google.maps.event.addDomListener(window, 'resize', function() {
+		  map.setCenter(center);
+		});
+		// label
+		var infobox = new InfoBox({
+			content: document.getElementById("if"),
+			disableAutoPan: false,
+			maxWidth: 150,
+			pixelOffset: new google.maps.Size(-50,-140),
+			zIndex: null,
+			position:loc,
+			boxStyle: {
+				background: "url('http://google-maps-utility-library-v3.googlecode.com/svn/trunk/infobox/examples/tipbox.gif') no-repeat",
+				opacity: 1,
+				// width: "380px"
+	        },
+	        closeBoxMargin: "12px 4px 2px 2px",
+	        closeBoxURL: "http://www.google.com/intl/en_us/mapfiles/close.gif",
+	        infoBoxClearance: new google.maps.Size(1, 1)
+	    });
+        infobox.open(map);
+
+      }
+      google.maps.event.addDomListener(window, 'load', initialize);
+
+    </script>
+
+
  </head>
 <body>
 	<div class="nav">
@@ -160,11 +243,55 @@
 			<h1>KONTAKT</h1>
 			<div id="dashed">Budeme radi, ak nás <em>kontaktujete</em> prostredníctvom formulára.</div>
 		</div>
-		<!-- formular -->
+		<div class="form">
+			<form action="MAILTO:samuell.snopko@gmail.com.com" method="post" enctype="text/plain">
+				<input type="text" name="name" id="left" placeholder="Vaše meno (Povinné)" />
+				<input type="email" name="email" id="right" placeholder="Váš email (Povinné)" />
+				<textarea name="Message" id="message" placeholder="Vaša správa"></textarea>
+				<button type="submit" name="submit"><img src="img/mail.png">ODOSLAŤ</button>
+			</form>
+		</div>
 	</div>
 
-	<div class="temp"></div>
+	<div class="foot">
+		<div class="footer">
+			<div class="box">
+				<span id="left"></span>
+				<span id="center">
+					<a href="#">SLUŽBY</a><br>
+					<a href="#">REFERENCIE</a><br>
+					<a href="#">O NÁS</a><br>
+					<a href="#">KONTAKT</a>
+				</span>
+				<span id="right">
+					<span>ITEAS, s.r.o.</span><br>Trenčianska 37<br>821 09 • Bratislava<br>IČO: 46129472<br>DIČ: 2023260338
+				</span>
+				<div id="copyright">© 2014 All Rights Reserved. ITEAS, s.r.o.</div>
+			</div>
+		</div>
 
+
+		<div id="map_canvas"></div>
+
+		<div class="infobox-wrapper">
+		    <div id="infobox">
+		        The contents of your info box. It's very easy to create and customize.
+		    </div>
+		    <div id="if">
+			    <div class="shadow"></div>
+				<div class="sipka">
+				    <div class="left">
+				        <div class="arrow"></div>
+				    </div>
+				    <div class="right">
+				        <div class="arrow"></div>
+				    </div>
+				</div>
+				<div class="label"><span id="logo_rv"></span><span id="address"><strong>ITEAS, s.r.o.</strong><br>Trenčianska 37<br>821 09 Bratislava<br><em>iteas@iteas.sk</em></span></div>
+			</div>
+	    </div>
+	</div>
+	
 	<script src="js/classie.js"></script>
 	<script src="js/skrollr.min.js"></script>
 	<script src="js/main.js"></script>

@@ -1,3 +1,11 @@
+/*
+oo__          _      _          __oo   Samuel Snopko
+      """--,,,_(_)_--_(_)_,,,--"""
+              _>_[____]_<_
+      ___--""" (_)\__/(_) """--___     
+  oo""                            ""oo
+*/
+
 /*temp*/
 .temp{
   height: 100000px;
@@ -188,8 +196,8 @@ img.logo {
 
 .section > .pane{
   background-color: #f5f5f5;
-  min-height: 13em;
-  padding-bottom: 1em;
+  /*min-height: 13em;*/
+  padding-bottom: 0.5rem;
   text-align: center;
   box-shadow: 0 5px 5px -3px #d7d7d7;
 }
@@ -403,4 +411,260 @@ span.panel:hover div{
 
 .about .article{
   padding-top: 0.5rem;
+}
+
+/*mail form*/
+.contact .form{
+  width: 50%;
+  max-width: 50rem;
+  min-width: 20rem;
+  margin-top: 1rem;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+.form input{
+  width: 49%;
+  display: inline-block;
+  min-height: 2rem;
+  min-width: 20rem;
+  background-color: #f5f5f5;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 300;
+  padding: 0.4rem;
+  margin-top: 0.5rem;
+  border:none;
+  box-shadow: inset 1px 1px 2px #999999;
+}
+
+#left{
+  float: left;
+}
+
+#right{
+  float: right;  
+}
+
+.form textarea{
+  font-family: 'Roboto', sans-serif;
+  font-weight: 300;
+  padding: 0.4rem;
+  background-color: #f5f5f5;
+  margin-top: 0.8rem;
+  width:100%;
+  height:12rem;
+  border:none;
+  resize:none;
+  box-shadow: inset 1px 1px 2px #999999;
+}
+
+.form button{
+  display: block;
+  margin-top: 1rem;
+  border: none;
+  background-color: #00aeef;
+  color: white;
+  font-family: 'Lato', sans-serif;
+  font-weight: 300;
+  font-size: 1.1em;
+  margin-right: auto;
+  margin-left: auto;
+  padding: 0.5rem 2rem 0.5rem 2rem;
+  box-shadow: 0 2px #cccccc;
+}
+
+button > img{
+  height: 0.8em;
+  margin-right: 0.5em;
+}
+
+/*mapa*/
+#map_canvas {
+  width: 100%;
+  height: 50em;
+  position: absolute;
+  bottom: 0;
+}
+
+/*footer*/
+.foot{
+  position: relative;
+  height: 50em;
+  background-color: purple;
+}
+
+.footer{
+  /*clear: both;*/
+  width: 100%;
+  bottom: 0;
+  /*height: 30%;*/
+  position: absolute;
+  z-index: 99999999;
+  /*color: white;*/
+  background-color: hsla(50, 0%, 0%, 0.5);
+}
+
+.footer > .box{
+  width: 50%;
+  max-width: 50rem;
+  /*height: 100%;*/
+  margin-right: auto;
+  margin-left: auto;
+  padding-top: 1rem;
+  font-family: Lato, 'sans-serif';
+  font-weight: 300;
+  color: #999999;
+  /*border:1px solid blue;*/
+}
+
+.footer > .box > span{
+  display: inline-block;
+  min-width: 10rem;
+  width: 25%;
+  min-height: 5rem;
+  /*border: 2px dashed red; */
+}
+
+.box > #left{
+  background: url('../img/logo_bw.png') no-repeat left 0;
+}
+
+.box > #center{
+  width: 50%;
+  /*min-width: 20rem;*/
+  padding-top: 1rem;
+  text-align: center;
+}
+
+.box > #right{
+  width: 24%;
+  padding-top: 1rem;
+  text-align: right;
+  font-size: 0.7rem;
+}
+
+.box > #right > span{
+  float: none;
+  font-family: Roboto, 'sans-serif';
+  font-weight: 300;
+  font-size: 1.2rem;  
+}
+
+.box > #copyright{
+  clear: both;
+  text-align: center;
+  font-size: 0.8rem;
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+}
+
+/*infobox*/
+.infobox-wrapper {
+    display:none;
+}
+#infobox {
+  border:2px solid black;
+  margin-top: 10px;
+  background:#333;
+  color:#FFF;
+  font-family:Arial, Helvetica, sans-serif;
+  font-size:12px;
+  padding: .5em 1em;
+  -webkit-border-radius: 2px;
+  -moz-border-radius: 2px;
+  border-radius: 2px;
+  text-shadow:0 -1px #000000;
+  -webkit-box-shadow: 0 0  8px #000;
+  box-shadow: 0 0 8px #000;
+}
+
+.infoBox > img{
+  display: none;
+}
+
+
+.shadow {
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    /*background-color: rgba(0, 0, 0, 0.2);*/
+    border-top-left-radius: 2px;
+    border-top-right-radius: 2px;
+    border-bottom-right-radius: 2px;
+    border-bottom-left-radius: 2px;
+/*    -webkit-box-shadow: rgba(0, 0, 0, 0.298039) 0px 1px 4px -1px;
+    box-shadow: rgba(0, 0, 0, 0.298039) 0px 1px 4px -1px;
+*/    width: 254px;
+    height: 234px;
+}
+.sipka {
+    border-top-width: 24px;
+    position: absolute;
+    left: 117px;
+    top: 231px;
+}
+.left {
+  position: absolute;
+  overflow: hidden;
+  left: -6rem;
+  top: -6.5rem;
+  width: 1.7rem;
+  height: 2rem;
+}
+.left > .arrow {
+  position: absolute;
+  left: 0.5rem;
+  background-color: white;
+  -webkit-transform: skewX(49deg);
+  -webkit-transform-origin: 0px 0px;
+  height: 1rem;
+  width: 100%;
+  /* box-shadow: rgba(0, 0, 0, 0.6) 0px 1px 6px; */
+}
+.right {
+  position: absolute;
+  overflow: hidden;
+  left: -4.4rem;
+  top: -6.5rem;
+  width: 1.7rem;
+  height: 2rem;
+}
+.right > .arrow {
+  position: absolute;
+  left: -0.5rem;
+  background-color: white;
+  -webkit-transform: skewX(-49deg);
+  -webkit-transform-origin: 0px 0px;
+  height: 1rem;
+  width: 100%;
+  /*box-shadow: rgba(0, 0, 0, 0.6) 0px 1px 6px;*/
+}
+.label {
+    position: absolute;
+    background-color: white;
+    width: 18rem;
+    height: 8rem;
+    padding: 1.5rem;
+    padding-bottom: 1.9rem;
+}
+
+#logo_rv{
+  background: url('../img/logo_rv.png') no-repeat left 1rem;
+  background-size: auto 3rem;
+  height: 100%;
+  width: 6rem;
+  display: inline-block;
+}
+
+#address{
+  display: inline-block;
+  font-family: Roboto, 'sans-serif';
+  font-weight: 300;
+  padding-left: 2rem;
+}
+
+#address > strong{
+  font-size: 1.7em;
+  font-weight: 400;
+  color: black;
 }
