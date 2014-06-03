@@ -23,6 +23,8 @@
         var map_canvas = document.getElementById('map_canvas');
         var loc = new google.maps.LatLng(48.150677, 17.137187);
         var map_options = {
+        	streetViewControl:false,
+        	minZoom:9,
           center: loc,
           zoom: 13,
           mapTypeId: google.maps.MapTypeId.ROADMAP,
@@ -64,10 +66,28 @@
       google.maps.event.addDomListener(window, 'load', initialize);
 
     </script>
+    
 
 
  </head>
 <body>
+	<div class="nav-left">
+	    <ul>
+	        <li><a data-scroll="" data-options="easing: easeInOutQuad; speed:500" href=".service"><div class="point"></div>
+	            <div class="show">SLUŽBY</div></a>
+	        </li>
+	        <li><a data-scroll="" data-options="easing: easeInOutQuad; speed:1000" href=".referencie"><div class="point"></div>
+	            <div class="show">REFERENCIE</div></a>
+	        </li>
+	        <li><div class="point"></div>
+	            <div class="show">O NÁS</div>
+	        </li>
+	        <li><div class="point"></div>
+	            <div class="show">KONTAKT</div>
+	        </li>
+	    </ul>
+	</div>
+
 	<div class="nav">
 		<a href="#"><img class="logo" src="img/logo_iteas.png"></a>
 		<div>

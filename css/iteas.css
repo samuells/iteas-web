@@ -60,10 +60,67 @@ img.logo {
   width: 7em;
 }
 
+/*left nav*/
+.nav-left{
+position: fixed;
+z-index: 10000000;
+top:10%;
+right: 5.5%;
+
+/*display: none;*/
+/*border:5px dashed blue;*/
+/*visibility: hidden;
+opacity: 0;*/
+}
+
+/*.nav-left.fixed{
+    visibility:visible;
+    -webkit-transition: opacity 0.5s;
+    -moz-transition: opacity 0.5s;
+    -o-transition: opacity 0.5s;
+    opacity:1;
+}*/
+
+.nav-left ul {
+  margin: 0;
+  list-style: none;
+  padding: 0;
+  float:right;
+}
+.nav-left li {
+  padding: 1em;
+  padding-left: 3em;
+  position:relative;
+}
+
+.nav-left .show {
+  text-align: right;
+  width: 8em;
+  position:absolute;
+  top:1.2em;
+  right:10em;
+  visibility:hidden;
+  opacity:0;
+  color: white;
+  -webkit-transition: opacity 0.5s,top 0.5s,right 0.5s;
+}
+.nav-left li:hover .show {
+  visibility:visible;
+  opacity:1;
+  right:2.5em;
+}
+
+.nav-left .point{
+  position: relative;
+  margin-top: 0.5em;
+  border-radius: 50%;
+  background-color: white;
+  width:0.7em;
+  height:0.7em;
+}
+
+
 /*slider*/
-
-
-
 .component {
     position:relative;
     height: inherit;
