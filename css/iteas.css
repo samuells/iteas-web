@@ -63,8 +63,6 @@ input, textarea{
   background-color: hsla(0,0%,0%,0.8);
   padding-left: 10%;
   padding-right: 10%;
-
-
 }
 
 .nav ul{
@@ -476,7 +474,7 @@ button > img{
   display: inline-block;
   min-width: 10rem;
   width: 33%;
-  min-height: 5rem;
+  min-height: 6rem;
   color: hsla(0, 0%, 100%, 0.9);
   padding-top: 1rem;
 }
