@@ -4,7 +4,6 @@
 	<meta charset="utf-8">
 	<title>iteas</title>
 	<link href="css/fxSoftScale.css" rel="stylesheet">
-	<link href="css/demo.css" rel="stylesheet">
 	<link href="css/normalize.css" rel="stylesheet">
 
 	<link href="css/iteas.css" rel="stylesheet">
@@ -17,24 +16,24 @@
 
     <script src="https://maps.googleapis.com/maps/api/js?sensor=false"></script>
     <script type="text/javascript" src="http://google-maps-utility-library-v3.googlecode.com/svn/trunk/infobox/src/infobox.js"></script>
-    <script src="js/smooth-scroll.js"></script>
+
     <script>
-      function initialize() {
-        var map_canvas = document.getElementById('map_canvas');
-        var loc = new google.maps.LatLng(48.150677, 17.137187);
-        var map_options = {
-        	streetViewControl:false,
-        	minZoom:9,
-          center: loc,
-          zoom: 13,
-          mapTypeId: google.maps.MapTypeId.ROADMAP,
-          scrollwheel:false,
-	      styles:[{"featureType":"all","elementType":"all","stylers":[{"invert_lightness":true},{"saturation":10},{"lightness":30},{"gamma":0.5},{"hue":"#435158"}]}]
-        }
-        var map = new google.maps.Map(map_canvas, map_options)
-        // centering
-        var center;
-		function calculateCenter() {
+	function initialize() {
+		var map_canvas = document.getElementById('map_canvas');
+		var loc = new google.maps.LatLng(48.146632, 17.162910);
+		var map_options = {
+			disableDefaultUI: true,
+			center: loc,
+			zoom: 13,
+			minZoom:7,
+			mapTypeId: google.maps.MapTypeId.ROADMAP,
+			scrollwheel:false,
+			styles:[{"featureType":"all","elementType":"all","stylers":[{"invert_lightness":true},{"saturation":10},{"lightness":30},{"gamma":0.5},{"hue":"#435158"}]}]
+		}
+		var map = new google.maps.Map(map_canvas, map_options)
+		// centering
+		var center;
+			function calculateCenter() {
 		  center = map.getCenter();
 		}
 		google.maps.event.addDomListener(map, 'idle', function() {
@@ -43,59 +42,33 @@
 		google.maps.event.addDomListener(window, 'resize', function() {
 		  map.setCenter(center);
 		});
-		// label
+		// map label
 		var infobox = new InfoBox({
-			content: document.getElementById("if"),
+			content: document.getElementById("maplabel"),
 			disableAutoPan: false,
-			maxWidth: 150,
-			pixelOffset: new google.maps.Size(-50,-140),
-			zIndex: null,
 			position:loc,
-			boxStyle: {
-				background: "url('http://google-maps-utility-library-v3.googlecode.com/svn/trunk/infobox/examples/tipbox.gif') no-repeat",
-				opacity: 1,
-				// width: "380px"
-	        },
-	        closeBoxMargin: "12px 4px 2px 2px",
-	        closeBoxURL: "http://www.google.com/intl/en_us/mapfiles/close.gif",
-	        infoBoxClearance: new google.maps.Size(1, 1)
-	    });
-        infobox.open(map);
+			pixelOffset: new google.maps.Size(-50,-140)
+		});
+		infobox.open(map);
+	}
 
-      }
       google.maps.event.addDomListener(window, 'load', initialize);
-
     </script>
-    
 
+    <script src="js/smooth-scroll.js"></script>
 
  </head>
+
 <body>
-	<div class="nav-left">
-	    <ul>
-	        <li><a data-scroll="" data-options="easing: easeInOutQuad; speed:500" href=".service"><div class="point"></div>
-	            <div class="show">SLUŽBY</div></a>
-	        </li>
-	        <li><a data-scroll="" data-options="easing: easeInOutQuad; speed:1000" href=".referencie"><div class="point"></div>
-	            <div class="show">REFERENCIE</div></a>
-	        </li>
-	        <li><div class="point"></div>
-	            <div class="show">O NÁS</div>
-	        </li>
-	        <li><div class="point"></div>
-	            <div class="show">KONTAKT</div>
-	        </li>
-	    </ul>
-	</div>
 
 	<div class="nav">
-		<a href="#"><img class="logo" src="img/logo_iteas.png"></a>
+		<a data-scroll="" data-options="easing: easeInOutQuad; speed:1000" href=".component"><img class="logo" src="img/logo_iteas.png"></a>
 		<div>
 			<ul>
-				<li><a data-scroll="" data-options="easing: easeInOutQuad; speed:500" href=".service">SLUŽBY</a></li>
-				<li><a data-scroll="" data-options="easing: easeInOutQuad; speed:1000" href=".referencie">REFERENCIE</a></li>
-				<li><a data-scroll="" data-options="easing: easeInOutQuad; speed:2000" href=".about">O NÁS</a></li>
-				<li><a data-scroll="" data-options="easing: easeInOutQuad; speed:2500" href=".contact">KONTAKT</a></li>
+				<li><a data-scroll="" data-options="easing: easeInOutQuad; speed:1000" href=".service">SLUŽBY</a></li>
+				<li><a data-scroll="" data-options="easing: easeInOutQuad; speed:1000" href=".reference">REFERENCIE</a></li>
+				<li><a data-scroll="" data-options="easing: easeInOutQuad; speed:1000" href=".about">O NÁS</a></li>
+				<li><a data-scroll="" data-options="easing: easeInOutQuad; speed:1000" href=".contact">KONTAKT</a></li>
 			</ul>
 		</div>
 	</div>
@@ -160,7 +133,7 @@
 		</div>
 	</div>
 
-	<div class="section referencie">
+	<div class="section reference">
 		<div class="pane">
 			<h1>REFERENCIE</h1>
 			<div id="dashed">Sme radi, keď naši partneri získajú <em>včas presne tie riešenia</em>, ktoré potrebujú.</div>
@@ -246,13 +219,15 @@
 	<div class="foot">
 		<div class="footer">
 			<div class="box">
-				<span id="left"></span>
-				<span id="center">
-					<a href="#">SLUŽBY</a><br>
-					<a href="#">REFERENCIE</a><br>
-					<a href="#">O NÁS</a><br>
-					<a href="#">KONTAKT</a>
+				<span id="left">
+					<a data-scroll="" data-options="easing: easeInOutQuad; speed:1000" href=".service">SLUŽBY</a><br>
+					<a data-scroll="" data-options="easing: easeInOutQuad; speed:1000" href=".reference">REFERENCIE</a><br>
+					<a data-scroll="" data-options="easing: easeInOutQuad; speed:1000" href=".about">O NÁS</a><br>
+					<a data-scroll="" data-options="easing: easeInOutQuad; speed:1000" href=".contact">KONTAKT</a>
 				</span>
+
+				<span id="center"></span>
+
 				<span id="right">
 					<span>ITEAS, s.r.o.</span><br>Trenčianska 37<br>821 09 • Bratislava<br>IČO: 46129472<br>DIČ: 2023260338
 				</span>
@@ -268,12 +243,11 @@
 
 		<div id="map_canvas"></div>
 
-		<div class="infobox-wrapper">
-		    <div id="infobox">
+		<!-- <div class="infobox-wrapper"> -->
+		    <!-- <div id="infobox">
 		        The contents of your info box. It's very easy to create and customize.
-		    </div>
-		    <div id="if">
-			    <div class="shadow"></div>
+		    </div> -->
+		    <div id="maplabel">
 				<div class="sipka">
 				    <div class="left">
 				        <div class="arrow"></div>
@@ -284,7 +258,7 @@
 				</div>
 				<div class="label"><span id="logo_rv"></span><span id="address"><strong>ITEAS, s.r.o.</strong><br>Trenčianska 37<br>821 09 Bratislava<br><em>iteas@iteas.sk</em></span></div>
 			</div>
-	    </div>
+	    <!-- </div> -->
 	</div>
 	
 	<script src="js/classie.js"></script>
