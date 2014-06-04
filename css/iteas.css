@@ -441,6 +441,13 @@ button > img{
   height: inherit;
 }
 
+.foot a{
+  color: hsla(0, 0%, 100%, 0.9);
+}
+.foot a:hover,.foot a:focus {
+  color: #726973;
+}
+
 /*map*/
 #map_canvas {
   width: 100%;
@@ -502,6 +509,7 @@ button > img{
   font-size: 0.8rem;
   margin-top: 2rem;
   margin-bottom: 2rem;
+  color: hsla(0, 0%, 100%, 0.9);
 }
 
 .circle {
