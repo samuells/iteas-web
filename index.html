@@ -48,7 +48,6 @@
       google.maps.event.addDomListener(window, 'load', initialize);
     </script>
 
-
  </head>
 
 <body>
@@ -66,7 +65,7 @@
 	</div>
 	<!-- need to be refactor -->
 	<div class="flash">
-			<img src="img/banner2.png" alt="security"/>
+			<img name="banner" alt="security"/>
 			<div class="title">
 				<h1><strong>OUTSOURCING</strong><br><em>IT</em> INFRAŠTRUKTÚRY</h1>
 				<h2>Lorem ipsum dolor sit amet, appetere<br> adipiscing in sea, his te persius</h2>
@@ -230,6 +229,11 @@
 	<script src="js/skrollr.min.js"></script>
     <script src="js/smooth-scroll.js"></script>
 	<script>
+		var element = document.getElementsByName("banner");
+		var cislo = Math.floor(Math.random()*3)+1;
+		console.debug(cislo);
+		element[0].setAttribute("src", "img/banner"+cislo+".png");
+		
 		skrollr.init();
     	smoothScroll.init();
 	</script>
