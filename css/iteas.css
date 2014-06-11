@@ -95,13 +95,19 @@ img.logo {
   min-height: 35em;
 }
 
-.flash img {
+.flash .cover {
   width:inherit;
-  height:100%;
+  min-height:100%!important;
+  background-position: center;
+  background-repeat: no-repeat;
   position: absolute;
   top:0;
   left:0;
   -webkit-filter: blur(5px);
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
 }
 
 .title {
@@ -266,8 +272,6 @@ img.logo {
 
 /*service*/
 .service > #boxes{
-  /*width: 85%;
-  max-width: 61em;*/
   margin-left: auto;
   margin-right: auto;
   margin-top: 2em;
@@ -466,10 +470,10 @@ button > img{
   height: inherit;
 }
 
-.foot a{
+.footer a{
   color: hsla(0, 0%, 100%, 0.9);
 }
-.foot a:hover,.foot a:focus {
+.footer a:hover,.foot a:focus {
   color: #726973;
 }
 
@@ -564,6 +568,10 @@ button > img{
   display: none;
 }
 
+.sipka, .label{
+  color:#000000;
+}
+
 .sipka {
   border-top-width: 24px;
   position: absolute;
@@ -612,6 +620,59 @@ button > img{
   padding: 1.5rem;
   padding-bottom: 1.9rem;
 }
+#maplabel:hover .sipka, #maplabel:hover .label, #maplabel:hover .cover_label{
+  -webkit-filter: blur(0px);
+}
+
+.cover_label{
+  position: absolute;
+  width: 18rem;
+  height: 8rem;
+  background-color: hsla(0,100%,100%,1);
+  opacity:0;
+}
+
+.direction_label{
+  position: absolute;
+  width: 18rem;
+  height: 8rem;
+  display: table;
+}
+
+.direction_label p{
+  display: table-cell; 
+  vertical-align: middle; 
+  text-align: left;
+  padding-left: 3.5rem;
+  font: 700 2.5em/1 'Roboto', Helvetica,sans-serif;
+  color:#726973;
+  opacity: 0;
+  background: url('../img/direction_arrow.png') no-repeat 1rem center;
+  background-size: 35px 35px;
+}
+
+#maplabel:hover .direction_label p, #maplabel:hover .cover_label{
+  opacity: 1;
+}
+
+/*aa*/
+/*#aa{
+  line-height: 1.4rem;
+  font-weight: 700;
+  font-size: 0.9rem;
+  text-align: right;
+  padding-right: 1.95rem;
+  width: 8.5rem;
+  background: url('../img/direction_arrow.png') no-repeat left center;
+  background-size: 22px 44px;
+  background-position: left top;
+  float: right;
+}
+
+#aa:hover {
+  background-position: left bottom; 
+}*/
+/**/
 
 #logo_rv{
   background: url('../img/logo_rv.png') no-repeat left 1rem;
