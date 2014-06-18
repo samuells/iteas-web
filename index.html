@@ -7,14 +7,14 @@
 	<link href="css/iteas.css" rel="stylesheet">
 	<!-- External links -->
 	<link href='http://fonts.googleapis.com/css?family=Roboto:300,400,700' rel='stylesheet' type='text/css'>
-    // <script src="https://maps.googleapis.com/maps/api/js?sensor=false"></script>
-    <script type="text/javascript" src="http://google-maps-utility-library-v3.googlecode.com/svn/trunk/infobox/src/infobox.js"></script>
-
+    <script src="https://maps.googleapis.com/maps/api/js?sensor=false"></script>
+    <script src="http://google-maps-utility-library-v3.googlecode.com/svn/trunk/infobox/src/infobox.js"></script>
 	<script>
 	function initialize() {
 		var map_canvas = document.getElementById('map_canvas');
 		var loc = new google.maps.LatLng(48.146632, 17.162910);
 		var map_options = {
+			// draggable:false,
 			disableDefaultUI: true,
 			center: loc,
 			zoom: 13,
@@ -45,204 +45,212 @@
 
     google.maps.event.addDomListener(window, 'load', initialize);
 	</script>
+	<!-- // <script src="js/sizzle.min"></script> -->
+	
 
  </head>
 
 <body>
 
+
 	<div class="nav">
-		<a data-scroll="" data-options="easing: easeInOutQuad; speed:1000" href=".flash"><img class="logo" src="img/logo_iteas.png"></a>
-		<div>
+		<a href="#section_home"><img class="logo" src="img/logo_iteas.png"></a>
+		<!-- <div> -->
 			<ul>
-				<li><a data-scroll="" data-options="easing: easeInOutQuad; speed:1000; offset: 56;" href=".service">SLUŽBY</a></li>
-				<li><a data-scroll="" data-options="easing: easeInOutQuad; speed:1000; offset: 56" href=".reference">REFERENCIE</a></li>
-				<li><a data-scroll="" data-options="easing: easeInOutQuad; speed:1000; offset: 56" href=".about">O NÁS</a></li>
-				<li><a data-scroll="" data-options="easing: easeInOutQuad; speed:1000; offset: 56" href=".contact">KONTAKT</a></li>
+				<li><a href="#section_contact">KONTAKT</a></li>
+				<li><a href="#section_about">O NÁS</a></li>
+				<li><a href="#section_reference">REFERENCIE</a></li>
+				<li><a href="#section_service">SLUŽBY</a></li>
 			</ul>
-		</div>
+		<!-- </div> -->
 	</div>
-	<!-- need to be refactor -->
-	<div class="flash">
-			<div class="cover" name="banner"></div>
-			<div class="title">
-				<h1><strong>OUTSOURCING</strong><br><em>IT</em> INFRAŠTRUKTÚRY</h1>
-				<h2>Lorem ipsum dolor sit amet, appetere<br> adipiscing in sea, his te persius</h2>
+
+	<div id="skrollr-body">
+		<!-- need to be refactor -->
+		<div id="section_home" class="flash">
+				<div class="cover" name="banner"></div>
+				<div class="title">
+					<h1><strong>OUTSOURCING</strong><br><em>IT</em> INFRAŠTRUKTÚRY</h1>
+					<h2>Lorem ipsum dolor sit amet, appetere<br> adipiscing in sea, his te persius</h2>
+				</div>
+		</div>
+		<!-- end -->
+		<div id="section_service" data-menu-offset="-56" class="section service">
+			<div class="pane">
+				<h1>SLUŽBY</h1>
+				<div id="dashed">Naše služby sú poskytované našim tímom s dlhoročnými <em>skúsenosťami</em>.</div>
 			</div>
-	</div>
-	<!-- end -->
-	<div class="section service">
-		<div class="pane">
-			<h1>SLUŽBY</h1>
-			<div id="dashed">Naše služby sú poskytované našim tímom s dlhoročnými <em>skúsenosťami</em>.</div>
-		</div>
-		<div id="boxes">
-			<span class="box" id="outsourcing">
-				<div class="top_dashed">Outsorcing<br>IT infraštruktúry</div>
-				<div class="info">Lorem ipsum dolor sit amet, appetere adipiscing in sea, his te persius elaboraret, pri alia velit impedit te.</div>
-			</span>
-			<span class="box" id="bezpecnost">
-				<div class="top_dashed">Bezpečnoť<br>IT infraštruktúry</div>
-				<div class="info">Lorem ipsum dolor sit amet, appetere adipiscing in sea, his te persius elaboraret, pri alia velit impedit te.</div>
-			</span>
-			<span class="box" id="vyvoj">
-				<div class="top_dashed">Vývoj informačných<br>systémov</div>
-				<div class="info">Lorem ipsum dolor sit amet, appetere adipiscing in sea, his te persius elaboraret, pri alia velit impedit te.</div>
-			</span>
-		</div>
-	</div>
-
-	<div class="scroll-1 scroll">
-		<div class="bcg"
-		data-center="background-position: 100% -100px;"
-        data-top-bottom="background-position: 100% -200px;"
-        data-bottom-top="background-position: 100% 0px;"
-        data-anchor-target=".scroll-1"
-        >
-        	<div class="cit">
-        		<strong>“</strong>A <strong>new idea</strong> comes suddenly and in rather intuitive way.<br>But <strong>intuition</strong> is nothing but the outcome<br>of earlier <strong>intellectual experience</strong>.<strong>”</strong><br><i>- Albert Einstein -</i>
-        	</div>
-		</div>
-	</div>
-
-	<div class="section reference">
-		<div class="pane">
-			<h1>REFERENCIE</h1>
-			<div id="dashed">Sme radi, keď naši partneri získajú <em>včas presne tie riešenia</em>, ktoré potrebujú.</div>
-		</div>
-		<div id="reference_panel">
-			<span class="panel" id="adidas"><div>Company,inc.<br><em>website</em><div>Id cibo eius honestatis qui, no has gubergren adolescens. Sea in constituam scriptorem, etiam doctus ei sea. In eum probo adipiscing definiebas, stet purto comprehensam in vel, graeci fierent.</div></div></span>
-			<span class="panel" id="adidas"><div>Company,inc.<br><em>website</em><div>Id cibo eius honestatis qui, no has gubergren adolescens. Sea in constituam scriptorem, etiam doctus ei sea. In eum probo adipiscing definiebas, stet purto comprehensam in vel, graeci fierent.</div></div></span>
-			<span class="panel" id="adidas"><div>Company,inc.<br><em>website</em><div>Id cibo eius honestatis qui, no has gubergren adolescens. Sea in constituam scriptorem, etiam doctus ei sea. In eum probo adipiscing definiebas, stet purto comprehensam in vel, graeci fierent.</div></div></span>
-			<span class="panel" id="adidas"><div>Company,inc.<br><em>website</em><div>Id cibo eius honestatis qui, no has gubergren adolescens. Sea in constituam scriptorem, etiam doctus ei sea. In eum probo adipiscing definiebas, stet purto comprehensam in vel, graeci fierent.</div></div></span>
-			<span class="panel" id="adidas"><div>Company,inc.<br><em>website</em><div>Id cibo eius honestatis qui, no has gubergren adolescens. Sea in constituam scriptorem, etiam doctus ei sea. In eum probo adipiscing definiebas, stet purto comprehensam in vel, graeci fierent.</div></div></span>
-			<span class="panel" id="adidas"><div>Company,inc.<br><em>website</em><div>Id cibo eius honestatis qui, no has gubergren adolescens. Sea in constituam scriptorem, etiam doctus ei sea. In eum probo adipiscing definiebas, stet purto comprehensam in vel, graeci fierent.</div></div></span>
-			<span class="panel" id="adidas"><div>Company,inc.<br><em>website</em><div>Id cibo eius honestatis qui, no has gubergren adolescens. Sea in constituam scriptorem, etiam doctus ei sea. In eum probo adipiscing definiebas, stet purto comprehensam in vel, graeci fierent.</div></div></span>
-			<span class="panel" id="adidas"><div>Company,inc.<br><em>website</em><div>Id cibo eius honestatis qui, no has gubergren adolescens. Sea in constituam scriptorem, etiam doctus ei sea. In eum probo adipiscing definiebas, stet purto comprehensam in vel, graeci fierent.</div></div></span>
-			<span class="panel" id="adidas"><div>Company,inc.<br><em>website</em><div>Id cibo eius honestatis qui, no has gubergren adolescens. Sea in constituam scriptorem, etiam doctus ei sea. In eum probo adipiscing definiebas, stet purto comprehensam in vel, graeci fierent.</div></div></span>
-			<span class="panel" id="adidas"><div>Company,inc.<br><em>website</em><div>Id cibo eius honestatis qui, no has gubergren adolescens. Sea in constituam scriptorem, etiam doctus ei sea. In eum probo adipiscing definiebas, stet purto comprehensam in vel, graeci fierent.</div></div></span>
-			<span class="panel" id="adidas"><div>Company,inc.<br><em>website</em><div>Id cibo eius honestatis qui, no has gubergren adolescens. Sea in constituam scriptorem, etiam doctus ei sea. In eum probo adipiscing definiebas, stet purto comprehensam in vel, graeci fierent.</div></div></span>
-			<span class="panel" id="adidas"><div>Company,inc.<br><em>website</em><div>Id cibo eius honestatis qui, no has gubergren adolescens. Sea in constituam scriptorem, etiam doctus ei sea. In eum probo adipiscing definiebas, stet purto comprehensam in vel, graeci fierent.</div></div></span>
-		</div>
-	</div>
-
-	<div class="scroll-2 scroll">
-		<div class="bcg"
-		data-center="background-position: 100% -300px;"
-        data-top-bottom="background-position: 100% -600px;"
-        data-bottom-top="background-position: 100% 0px;"
-        data-anchor-target=".scroll-2"
-        >
-        	<div class="cit">
-        		<strong>“</strong>A <strong>good idea</strong> is something does not solve<br>just <strong>one single problem</strong>, but rather an solve<br><strong>multiple problems</strong> at once.<strong>”</strong><br><i>- Shigeru Miyamoto -</i>
-        	</div>
-		</div>
-	</div>
-
-	<div class="section about">
-		<div class="pane">
-			<h1>O NÁS</h1>
-			<div id="dashed">Sme IT spoločnosť na <em>správu</em> a <em>bezpečnosť</em> IT riešení<br>a <em>vývoj</em> informačných systémov na mieru.</div>
-		</div>
-		<div id="articles">
-			<article>
-				<img src="img/pic1.png">
-				<div class="article">Id cibo eius honestatis qui, no has gubergren adolescens. Sea in constituam scriptorem, etiam doctus ei sea. In eum probo <em>adipiscing definiebas</em>, stet purto comprehensam in vel, graeci fierent voluptaria id duo. Assentior interpretaris ad per. An nec amet qualisque, simul soluta eu mel, meis <em>perfecto</em> eam no.</div>
-			</article>
-			<article>
-				<img src="img/pic2.png">
-				<div class="article">Id cibo eius honestatis qui, no has gubergren adolescens. Sea in constituam scriptorem, etiam doctus ei sea. In eum probo adipiscing definiebas, stet <em>purto comprehensam</em> in vel, graeci fierent voluptaria id duo. Assentior interpretaris ad per. An nec amet qualisque, simul soluta eu mel, meis perfecto eam no.</div>
-			</article>
-			<article>
-				<img src="img/pic3.png">
-				<div class="article">Id cibo eius honestatis qui, no has gubergren adolescens. <em>Sea in</em> constituam scriptorem, etiam doctus ei sea. In eum probo adipiscing definiebas, stet purto comprehensam in vel, graeci fierent voluptaria id duo. Assentior interpretaris ad per. An nec amet qualisque, simul <em>soluta eu mel</em>, meis perfecto eam no.</div>
-			</article>
-		</div>
-	</div>
-
-	<div class="scroll-3 scroll">
-		<div class="bcg"
-		data-center="background-position: 100% -300px;"
-        data-top-bottom="background-position: 100% -600px;"
-        data-bottom-top="background-position: 100% 0px;"
-        data-anchor-target=".scroll-3"
-        >
-        	<div class="cit">
-        		<strong>“</strong>The only sure weapon against <strong>bad idea</strong><br>is <strong>better idea</strong>.<strong>”</strong><br><i>- Alfred Whitney Griswold -</i>
-        	</div>
-		</div>
-	</div>
-
-	<div id="nav_contact" class="section contact">
-		<div class="pane">
-			<h1>KONTAKT</h1>
-			<div id="dashed">Budeme radi, ak nás <em>kontaktujete</em> prostredníctvom formulára.</div>
-		</div>
-		<div class="form">
-			<form action="MAILTO:samuell.snopko@gmail.com.com" method="post" enctype="text/plain">
-				<input type="text" name="name" id="left" placeholder="Vaše meno (Povinné)" />
-				<input type="email" name="email" id="right" placeholder="Váš email (Povinné)" />
-				<textarea name="Message" id="message" placeholder="Vaša správa"></textarea>
-				<button type="submit" name="submit"><img src="img/mail.png">ODOSLAŤ</button>
-			</form>
-		</div>
-	</div>
-
-	<div class="foot">
-		<div class="footer">
-			<div class="box">
-				<span id="left">
-					<a data-scroll="" data-options="easing: easeInOutQuad; speed:1000; offset: 56" href=".service">SLUŽBY</a><br>
-					<a data-scroll="" data-options="easing: easeInOutQuad; speed:1000; offset: 56" href=".reference">REFERENCIE</a><br>
-					<a data-scroll="" data-options="easing: easeInOutQuad; speed:1000; offset: 56" href=".about">O NÁS</a><br>
-					<a data-scroll="" data-options="easing: easeInOutQuad; speed:1000; offset: 56" href=".contact">KONTAKT</a>
+			<div id="boxes">
+				<!-- <span class="box" id="outsourcing"> -->
+				<span class="box">
+					<div class="sprite outsourcing"></div>
+					<div class="top_dashed">Outsorcing<br>IT infraštruktúry</div>
+					<div class="info">Lorem ipsum dolor sit amet, appetere adipiscing in sea, his te persius elaboraret, pri alia velit impedit te.</div>
 				</span>
-
-				<span id="center"></span>
-
-				<span id="right">
-					<span>ITEAS, s.r.o.</span><br>Kladnianska 34<br>821 05 • Bratislava<br>IČO: 46129472<br>DIČ: 2023260338
+				<span class="box">
+					<div class="sprite security"></div>
+					<div class="top_dashed">Bezpečnoť<br>IT infraštruktúry</div>
+					<div class="info">Lorem ipsum dolor sit amet, appetere adipiscing in sea, his te persius elaboraret, pri alia velit impedit te.</div>
 				</span>
-				<div id="copyright">© 2014 All Rights Reserved. ITEAS, s.r.o.</div>
+				<span class="box">
+					<div class="sprite dev"></div>
+					<div class="top_dashed">Vývoj informačných<br>systémov</div>
+					<div class="info">Lorem ipsum dolor sit amet, appetere adipiscing in sea, his te persius elaboraret, pri alia velit impedit te.</div>
+				</span>
 			</div>
-			<a data-scroll="" data-options="easing: easeInOutQuad; speed:3000" href=".nav">
-			    <div class="circle">
-			        <div class="arrow-up"></div>
-			    </div>
-		    </a>
 		</div>
-		<div id="map_canvas"></div>
-		
-	    <div id="maplabel">
-	    	<a target="_blank" href="https://maps.google.com?daddr=Kladnianska+34,+821+05+Bratislava,+Slovakia">
-				<div class="sipka">
-				    <div class="left">
-				        <div class="arrow"></div>
+
+		<div class="scroll-1 scroll">
+			<div class="bcg"
+			data-center="background-position: 100% -100px;"
+	        data-top-bottom="background-position: 100% -200px;"
+	        data-bottom-top="background-position: 100% 0px;"
+	        data-anchor-target=".scroll-1"
+	        >
+	        	<div class="cit">
+	        		<strong>“</strong>A <strong>new idea</strong> comes suddenly and in rather intuitive way.<br>But <strong>intuition</strong> is nothing but the outcome<br>of earlier <strong>intellectual experience</strong>.<strong>”</strong><br><i>- Albert Einstein -</i>
+	        	</div>
+			</div>
+		</div>
+
+		<div id="section_reference" data-menu-offset="-56" class="section reference">
+			<div class="pane">
+				<h1>REFERENCIE</h1>
+				<div id="dashed">Sme radi, keď naši partneri získajú <em>včas presne tie riešenia</em>, ktoré potrebujú.</div>
+			</div>
+			<div id="reference_panel">
+				<span class="panel" id="adidas"><div>Company,inc.<br><em>website</em><div>Id cibo eius honestatis qui, no has gubergren adolescens. Sea in constituam scriptorem, etiam doctus ei sea. In eum probo adipiscing definiebas, stet purto comprehensam in vel, graeci fierent.</div></div></span>
+				<span class="panel" id="adidas"><div>Company,inc.<br><em>website</em><div>Id cibo eius honestatis qui, no has gubergren adolescens. Sea in constituam scriptorem, etiam doctus ei sea. In eum probo adipiscing definiebas, stet purto comprehensam in vel, graeci fierent.</div></div></span>
+				<span class="panel" id="adidas"><div>Company,inc.<br><em>website</em><div>Id cibo eius honestatis qui, no has gubergren adolescens. Sea in constituam scriptorem, etiam doctus ei sea. In eum probo adipiscing definiebas, stet purto comprehensam in vel, graeci fierent.</div></div></span>
+				<span class="panel" id="adidas"><div>Company,inc.<br><em>website</em><div>Id cibo eius honestatis qui, no has gubergren adolescens. Sea in constituam scriptorem, etiam doctus ei sea. In eum probo adipiscing definiebas, stet purto comprehensam in vel, graeci fierent.</div></div></span>
+				<span class="panel" id="adidas"><div>Company,inc.<br><em>website</em><div>Id cibo eius honestatis qui, no has gubergren adolescens. Sea in constituam scriptorem, etiam doctus ei sea. In eum probo adipiscing definiebas, stet purto comprehensam in vel, graeci fierent.</div></div></span>
+				<span class="panel" id="adidas"><div>Company,inc.<br><em>website</em><div>Id cibo eius honestatis qui, no has gubergren adolescens. Sea in constituam scriptorem, etiam doctus ei sea. In eum probo adipiscing definiebas, stet purto comprehensam in vel, graeci fierent.</div></div></span>
+				<span class="panel" id="adidas"><div>Company,inc.<br><em>website</em><div>Id cibo eius honestatis qui, no has gubergren adolescens. Sea in constituam scriptorem, etiam doctus ei sea. In eum probo adipiscing definiebas, stet purto comprehensam in vel, graeci fierent.</div></div></span>
+				<span class="panel" id="adidas"><div>Company,inc.<br><em>website</em><div>Id cibo eius honestatis qui, no has gubergren adolescens. Sea in constituam scriptorem, etiam doctus ei sea. In eum probo adipiscing definiebas, stet purto comprehensam in vel, graeci fierent.</div></div></span>
+				<span class="panel" id="adidas"><div>Company,inc.<br><em>website</em><div>Id cibo eius honestatis qui, no has gubergren adolescens. Sea in constituam scriptorem, etiam doctus ei sea. In eum probo adipiscing definiebas, stet purto comprehensam in vel, graeci fierent.</div></div></span>
+				<span class="panel" id="adidas"><div>Company,inc.<br><em>website</em><div>Id cibo eius honestatis qui, no has gubergren adolescens. Sea in constituam scriptorem, etiam doctus ei sea. In eum probo adipiscing definiebas, stet purto comprehensam in vel, graeci fierent.</div></div></span>
+				<span class="panel" id="adidas"><div>Company,inc.<br><em>website</em><div>Id cibo eius honestatis qui, no has gubergren adolescens. Sea in constituam scriptorem, etiam doctus ei sea. In eum probo adipiscing definiebas, stet purto comprehensam in vel, graeci fierent.</div></div></span>
+				<span class="panel" id="adidas"><div>Company,inc.<br><em>website</em><div>Id cibo eius honestatis qui, no has gubergren adolescens. Sea in constituam scriptorem, etiam doctus ei sea. In eum probo adipiscing definiebas, stet purto comprehensam in vel, graeci fierent.</div></div></span>
+			</div>
+		</div>
+
+		<div class="scroll-2 scroll">
+			<div class="bcg"
+			data-center="background-position: 100% -100px;"
+	        data-top-bottom="background-position: 100% -200px;"
+	        data-bottom-top="background-position: 100% 0px;"
+	        data-anchor-target=".scroll-2"
+	        >
+	        	<div class="cit">
+	        		<strong>“</strong>A <strong>good idea</strong> is something does not solve<br>just <strong>one single problem</strong>, but rather an solve<br><strong>multiple problems</strong> at once.<strong>”</strong><br><i>- Shigeru Miyamoto -</i>
+	        	</div>
+			</div>
+		</div>
+
+		<div id="section_about" data-menu-offset="-56" class="section about">
+			<div class="pane">
+				<h1>O NÁS</h1>
+				<div id="dashed">Sme IT spoločnosť na <em>správu</em> a <em>bezpečnosť</em> IT riešení<br>a <em>vývoj</em> informačných systémov na mieru.</div>
+			</div>
+			<div id="articles">
+				<article>
+					<img src="img/pic1.png">
+					<div class="article">Id cibo eius honestatis qui, no has gubergren adolescens. Sea in constituam scriptorem, etiam doctus ei sea. In eum probo <em>adipiscing definiebas</em>, stet purto comprehensam in vel, graeci fierent voluptaria id duo. Assentior interpretaris ad per. An nec amet qualisque, simul soluta eu mel, meis <em>perfecto</em> eam no.</div>
+				</article>
+				<article>
+					<img src="img/pic2.png">
+					<div class="article">Id cibo eius honestatis qui, no has gubergren adolescens. Sea in constituam scriptorem, etiam doctus ei sea. In eum probo adipiscing definiebas, stet <em>purto comprehensam</em> in vel, graeci fierent voluptaria id duo. Assentior interpretaris ad per. An nec amet qualisque, simul soluta eu mel, meis perfecto eam no.</div>
+				</article>
+				<article>
+					<img src="img/pic3.png">
+					<div class="article">Id cibo eius honestatis qui, no has gubergren adolescens. <em>Sea in</em> constituam scriptorem, etiam doctus ei sea. In eum probo adipiscing definiebas, stet purto comprehensam in vel, graeci fierent voluptaria id duo. Assentior interpretaris ad per. An nec amet qualisque, simul <em>soluta eu mel</em>, meis perfecto eam no.</div>
+				</article>
+			</div>
+		</div>
+
+		<div class="scroll-3 scroll">
+			<div class="bcg"
+			data-center="background-position: 100% -100px;"
+	        data-top-bottom="background-position: 100% -200px;"
+	        data-bottom-top="background-position: 100% 0px;"
+	        data-anchor-target=".scroll-3"
+	        >
+	        	<div class="cit">
+	        		<strong>“</strong>The only sure weapon against <strong>bad idea</strong><br>is <strong>better idea</strong>.<strong>”</strong><br><i>- Alfred Whitney Griswold -</i>
+	        	</div>
+			</div>
+		</div>
+
+		<div id="section_contact" data-menu-offset="-56" class="section contact">
+			<div class="pane">
+				<h1>KONTAKT</h1>
+				<div id="dashed">Budeme radi, ak nás <em>kontaktujete</em> prostredníctvom formulára.</div>
+			</div>
+			<div class="form">
+				<form action="MAILTO:samuell.snopko@gmail.com.com" method="post" enctype="text/plain">
+					<input type="text" name="name" id="left" placeholder="Vaše meno (Povinné)" />
+					<input type="email" name="email" id="right" placeholder="Váš email (Povinné)" />
+					<textarea name="Message" id="message" placeholder="Vaša správa"></textarea>
+					<button type="submit" name="submit"><img src="img/mail.png">ODOSLAŤ</button>
+				</form>
+			</div>
+		</div>
+
+<!-- 		<div style="width:50%;height:100%;background-color:red;">
+		</div> -->
+
+		<div class="foot">
+			<div class="footer">
+				<div class="box">
+					<span id="left">
+						<a href="#section_service">SLUŽBY</a><br>
+						<a href="#section_reference">REFERENCIE</a><br>
+						<a href="#section_about">O NÁS</a><br>
+						<a href="#section_contact">KONTAKT</a>
+					</span>
+
+					<span id="center"></span>
+
+					<span id="right">
+						<span>ITEAS, s.r.o.</span><br>Kladnianska 34<br>821 05 • Bratislava<br>IČO: 46129472<br>DIČ: 2023260338
+					</span>
+					<div id="copyright">© 2014 All Rights Reserved. ITEAS, s.r.o.</div>
+				</div>
+				<a href="#section_home">
+				    <div class="circle">
+				        <div class="arrow-up"></div>
 				    </div>
-				    <div class="right">
-				        <div class="arrow"></div>
-				    </div>
-				</div>
-				<div class="label">
-					<span id="logo_rv"></span><span id="address"><strong>ITEAS, s.r.o.</strong><br>Kladnianska 34<br>821 05 Bratislava<br><em>iteas@iteas.sk</em></span>
-				</div>
-				<div class="cover_label">
-				</div>
-				<div class="direction_label">
-					<p>Navigovať k nám</p>
-				</div>
-			</a>
+			    </a>
+			</div>
+			<div id="map_canvas"></div>
+			
+		    <div id="maplabel">
+		    	<a target="_blank" href="https://maps.google.com?daddr=Kladnianska+34,+821+05+Bratislava,+Slovakia">
+					<div class="arrow-down"></div>
+					<div class="label">
+						<span id="logo_rv"></span><span id="address"><strong>ITEAS, s.r.o.</strong><br>Kladnianska 34<br>821 05 Bratislava<br><em>iteas@iteas.sk</em></span>
+					</div>
+					<div class="cover_label">
+					</div>
+					<div class="direction_label">
+						<p>Navigovať k nám</p>
+					</div>
+				</a>
+			</div>
 		</div>
 	</div>
 	
 	<script src="js/skrollr.min.js"></script>
-    <script src="js/smooth-scroll.js"></script>
-    <!-- // <script src="js/gmap.js"></script> -->
+    <script src="js/skrollr.menu.min.js"></script>
 	<script>
 		var element = document.getElementsByName("banner");
-		var cislo = Math.floor(Math.random()*3)+1;
-		element[0].setAttribute("style", "background-image:url('img/banner"+cislo+".png');");
-		skrollr.init();
-    	smoothScroll.init();
+		var num = Math.floor(Math.random()*3);
+		element[0].setAttribute("style", "background-image:url('img/cover"+num+".png');");
+		var s = skrollr.init();
+		skrollr.menu.init(s,{
+			duration: function(currentTop, targetTop) {
+		        return Math.abs(currentTop - targetTop) / 2.5;}
+		    });
 	</script>
 </body>
 </html>
