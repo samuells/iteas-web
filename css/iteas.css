@@ -17,14 +17,14 @@
   font-weight: lighter;
 }
 /*temp*/
-a:hover, a:focus {
+a:hover/*, a:focus*/ {
   color: #726973;
 }
 /*end temp*/
 
 *, *:after, *:before { 
-  box-sizing:border-box;
-/*-webkit-box-sizing: border-box; -moz-box-sizing: border-box; box-sizing: border-box;*/ }
+  box-sizing:border-box;}
+/*-webkit-box-sizing: border-box; -moz-box-sizing: border-box; box-sizing: border-box;*/ 
 /*.clearfix:before, .clearfix:after { content: ''; display: table; }
 .clearfix:after { clear: both; }*/
 
@@ -70,19 +70,36 @@ em{
 .nav{
   position: fixed;
   top: 0;
+  left: 0;
+  right: 0;
   z-index: 10;
-  width: 100%;
   min-height: 3.5em;
-  /*margin: 0 auto;*/
   background-color: hsla(0,0%,0%,0.8);
   padding-left: 10%;
   padding-right: 10%;
 }
 
-.nav li{
+#top-menu{
+  padding: 0;
+  width:21rem;
   float: right;
+  display: block;
+}
+
+#top-menu a{
+  -webkit-transition: .5s all ease-out;
+  -moz-transition: .5s all ease-out;
+  transition: .5s all ease-out;
+}
+
+#top-menu li.active a{
+  color:#726973;
+}
+
+.nav li{
+  float: left;
   display: inline;
-  margin-left: 1%;
+  margin-left: 4%;
   font-weight: 400;
 }
 
@@ -460,6 +477,28 @@ span.panel:hover div{
   border:none;
   box-shadow: inset 1px 1px 2px #999999;
   float: left;
+}
+
+.form .error{
+  box-shadow: inset 1px 1px 2px #999999, 0 0 10px red;
+}
+
+.error::-webkit-input-placeholder {
+  color: red;
+}
+.error:-moz-placeholder {
+  color: red;
+}
+.error:-ms-input-placeholder { /* IE10+ */
+  color: red;
+}
+.error::-moz-placeholder{
+  color: red;
+}
+
+.form p {
+  font-size: 1.3rem;
+  margin-top: 3rem;
 }
 
 .form input#right{

@@ -7,64 +7,18 @@
 	<link href="css/iteas.css" rel="stylesheet">
 	<!-- External links -->
 	<link href='http://fonts.googleapis.com/css?family=Roboto:300,400,700' rel='stylesheet' type='text/css'>
-    <script src="https://maps.googleapis.com/maps/api/js?sensor=false"></script>
-    <script src="http://google-maps-utility-library-v3.googlecode.com/svn/trunk/infobox/src/infobox.js"></script>
-	<script>
-	function initialize() {
-		var map_canvas = document.getElementById('map_canvas');
-		var loc = new google.maps.LatLng(48.146632, 17.162910);
-		var map_options = {
-			// draggable:false,
-			disableDefaultUI: true,
-			center: loc,
-			zoom: 13,
-			scrollwheel:false,
-			styles:[{"featureType":"all","elementType":"all","stylers":[{"invert_lightness":true},{"saturation":10},{"lightness":30},{"gamma":0.5},{"hue":"#435158"}]}]
-		}
-		var map = new google.maps.Map(map_canvas, map_options)
-		// centering
-		var center;
-			function calculateCenter() {
-		  center = map.getCenter();
-		}
-		google.maps.event.addDomListener(map, 'idle', function() {
-		  calculateCenter();
-		});
-		google.maps.event.addDomListener(window, 'resize', function() {
-		  map.setCenter(center);
-		});
-		// map label
-		var infobox = new InfoBox({
-			content: document.getElementById("maplabel"),
-			disableAutoPan: false,
-			position:loc,
-			pixelOffset: new google.maps.Size(-50,-140)
-		});
-		infobox.open(map);
-	}
 
-    google.maps.event.addDomListener(window, 'load', initialize);
-	</script>
-	<!-- // <script src="js/sizzle.min"></script> -->
-	
-
- </head>
-
+</head>
 <body>
-
-
 	<div class="nav">
 		<a href="#section_home"><img class="logo" src="img/logo_iteas.png"></a>
-		<!-- <div> -->
-			<ul>
-				<li><a href="#section_contact">KONTAKT</a></li>
-				<li><a href="#section_about">O NÁS</a></li>
-				<li><a href="#section_reference">REFERENCIE</a></li>
-				<li><a href="#section_service">SLUŽBY</a></li>
-			</ul>
-		<!-- </div> -->
+		<ul id="top-menu">
+			<li><a href="#section_service">SLUŽBY</a></li>
+			<li><a href="#section_reference">REFERENCIE</a></li>
+			<li><a href="#section_about">O NÁS</a></li>
+			<li><a href="#section_contact">KONTAKT</a></li>
+		</ul>
 	</div>
-
 	<div id="skrollr-body">
 		<!-- need to be refactor -->
 		<div id="section_home" class="flash">
@@ -187,18 +141,72 @@
 				<div id="dashed">Budeme radi, ak nás <em>kontaktujete</em> prostredníctvom formulára.</div>
 			</div>
 			<div class="form">
-				<form action="MAILTO:samuell.snopko@gmail.com.com" method="post" enctype="text/plain">
-					<input type="text" name="name" id="left" placeholder="Vaše meno (Povinné)" />
-					<input type="email" name="email" id="right" placeholder="Váš email (Povinné)" />
-					<textarea name="Message" id="message" placeholder="Vaša správa"></textarea>
-					<button type="submit" name="submit"><img src="img/mail.png">ODOSLAŤ</button>
-				</form>
+				<?php
+					error_reporting(E_ALL ^ E_NOTICE); // hide all basic notices from PHP
+					//If the form is submitted
+					if(isset($_POST['submitted'])) {
+						// name validation
+						if(trim($_POST['name'])=== ''){
+							$nameError = 'Prosim zadajte svoje meno.';
+							$hasError=true;
+						} else {
+							$name = trim($_POST['name']);
+						}
+						// email validation
+						if(trim($_POST['email']) === ''){
+							$emailError = 'Nezadali ste ziadny email!';
+							$hasError = true;
+						} else if (!preg_match("/^[[:alnum:]][a-z0-9_.-]*@[a-z0-9.-]+\.[a-z]{2,4}$/i", trim($_POST['email']))) { 
+							$emailError = 'Nezadali ste email v spravnom tvare.';
+							$emailError = true;
+						} else {
+							$email = trim($_POST['email']);
+						}
+						// message validation
+						if(trim($_POST['message']) === '') {
+							$messageError = 'Prosim napiste nam nieco.';
+							$hasError = true;
+						} else {
+							if(function_exists('stripslashes')) {
+								$message = stripslashes(trim($_POST['message']));
+							} else {
+								$message = trim($_POST['message']);
+							}
+						}
+						// upon no failure errors let's email now!
+						if(!isset($hasError)) {
+							
+							$emailTo = 'samuell.snopko@google.com';
+							$subject = 'Submitted message from '.$name;
+							// $sendCopy = trim($_POST['sendCopy']);
+							// $from = 'From: iteasWeb';
+							$body = "Name: $name \n\nEmail: $email \n\nComments: $comments";
+							$headers = 'From: ' .' <'.$emailTo.'>' . "\r\n" . 'Reply-To: ' . $email;
+
+							mail($emailTo, $subject, $body, $headers);
+					        
+					        // set our boolean completion value to TRUE
+							$emailSent = true;
+						}
+					}
+
+				?>
+				<?php if(isset($emailSent) && $emailSent == true) { ?>
+	                <p>Your email was sent. Huzzah!</p>
+	            <?php } else { ?>
+			            <?php if(isset($hasError) || isset($captchaError) ) { ?>
+		                        <p class="alert">Error submitting the form</p>
+		                <?php } ?>
+					<form action="index.php" method="post" >
+						<input name="name" id="left" class="requiredField <?php if($nameError != '') { echo 'error'; }?>" type="text"  placeholder="<?php if($nameError != ''){ echo $nameError;} else { echo 'Vaše meno (Povinné)';}?>" <?php if(isset($_POST['name'])) echo 'value="'.$_POST['name'].'"';?>/>
+						<input name="email" id="right" class="requiredField <?php if($emailError != '') { echo 'error'; }?>" type="email" placeholder="<?php if($emailError != ''){ echo $emailError;} else { echo 'Váš email (Povinné)';}?>" <?php if($emailError == '' && isset($_POST['email'])) echo 'value="'.$_POST['email'].'"';?>/>
+						<textarea name="message" id="message" class="requiredField <?php if($messageError != '') { echo 'error'; }?>" placeholder="<?php if($messageError != ''){ echo $messageError;} else { echo 'Vaša správa (Povinná)';}?>"><?php if($message!='') echo $message;?></textarea>
+						<button type="submit" name="submit"><img src="img/mail.png">ODOSLAŤ</button>
+						<input type="hidden" name="submitted" id="submitted" value="true" />
+					</form>
+				<?php } ?>
 			</div>
 		</div>
-
-<!-- 		<div style="width:50%;height:100%;background-color:red;">
-		</div> -->
-
 		<div class="foot">
 			<div class="footer">
 				<div class="box">
@@ -244,13 +252,125 @@
     <script src="js/skrollr.menu.min.js"></script>
 	<script>
 		var element = document.getElementsByName("banner");
-		var num = Math.floor(Math.random()*3);
-		element[0].setAttribute("style", "background-image:url('img/cover"+num+".png');");
+		element[0].setAttribute("style", "background-image:url('img/cover"+Math.floor(Math.random()*3)+".png');");
 		var s = skrollr.init();
 		skrollr.menu.init(s,{
 			duration: function(currentTop, targetTop) {
 		        return Math.abs(currentTop - targetTop) / 2.5;}
 		    });
+	</script>
+	<script src="js/jquery-2.1.1.min.js"></script>
+	<script>
+		// Cache selectors
+		var lastId,
+		topMenu = $("#top-menu"),
+	    topMenuHeight = $(".nav").outerHeight(),
+	    // All list items
+	    menuItems = topMenu.find("a"),
+	    // Anchors corresponding to menu items
+	    scrollItems = menuItems.map(function () {
+	        var item = $($(this).attr("href"));
+	        if (item.length) {
+	            return item;
+	        }
+	    });
+
+	    // Bind to scroll
+		$(window).scroll(function () {
+		    // Get container scroll position
+		    var fromTop = $(this).scrollTop() + topMenuHeight;
+		    // Get id of current scroll item
+		    var cur = scrollItems.map(function () {
+		        if ($(this).offset().top < fromTop) return this;
+		    });
+		    // Get the id of the current element
+		    cur = cur[cur.length - 1];
+		    var id = cur && cur.length ? cur[0].id : "";
+
+		    if (lastId !== id) {
+		        lastId = id;
+		        // Set/remove active class
+		        menuItems.parent().removeClass("active")
+		            .end().filter("[href=#" + id + "]").parent().addClass("active");
+		    }
+		});
+	</script>
+	    <script src="https://maps.googleapis.com/maps/api/js?sensor=false"></script>
+    <script src="http://google-maps-utility-library-v3.googlecode.com/svn/trunk/infobox/src/infobox.js"></script>
+	<script>
+	function initialize() {
+		var map_canvas = document.getElementById('map_canvas');
+		var loc = new google.maps.LatLng(48.146632, 17.162910);
+		var map_options = {
+			// draggable:false,
+			disableDefaultUI: true,
+			center: loc,
+			zoom: 13,
+			scrollwheel:false,
+			styles:[{"featureType":"all","elementType":"all","stylers":[{"invert_lightness":true},{"saturation":10},{"lightness":30},{"gamma":0.5},{"hue":"#435158"}]}]
+		}
+		var map = new google.maps.Map(map_canvas, map_options)
+		// centering
+		var center;
+			function calculateCenter() {
+		  center = map.getCenter();
+		}
+		google.maps.event.addDomListener(map, 'idle', function() {
+		  calculateCenter();
+		});
+		google.maps.event.addDomListener(window, 'resize', function() {
+		  map.setCenter(center);
+		});
+		// map label
+		var infobox = new InfoBox({
+			content: document.getElementById("maplabel"),
+			disableAutoPan: false,
+			position:loc,
+			pixelOffset: new google.maps.Size(-50,-140)
+		});
+		infobox.open(map);
+	}
+
+    google.maps.event.addDomListener(window, 'load', initialize);
+	</script>
+	<script type="text/javascript">
+
+		$(document).ready(function() {
+			$('form').submit(function() {
+				console.log('kua');
+				$('form .error').removeClass('error');
+				var hasError = false;
+				$('.requiredField').each(function() {
+					console.log($('.requiredField'));
+					if($.trim($(this).val()) == '') {
+						if($(this).attr("name")==='name'){$(this).attr("placeholder", "Prosim zadajte svoje meno.");}
+						else if($(this).attr("name")==='message'){$(this).attr("placeholder", "Prosim napiste nam nieco.");}
+						else if($(this).attr("name")==='email'){$(this).attr("placeholder", "Nezadali ste ziadny email!");}
+						$(this).addClass('error');
+						hasError = true;
+					} else if($(this).attr("name")==='email') {
+						var emailReg = /^([\w-\.]+@([\w-]+\.)+[\w-]{2,4})?$/;
+						if(!emailReg.test($.trim($(this).val()))) {
+							var labelText = $(this).prev('label').text();
+							$(this).attr("placeholder", "Nezadali ste email v spravnom tvare.");
+							$(this).addClass('error');
+							hasError = true;
+						}
+					}
+				});
+				if(!hasError) {
+					var formInput = $(this).serialize();
+					$.post($(this).attr('action'),formInput, function(data){
+						$('form').slideUp("fast", function() {				   
+							$(this).before('<p><strong>Ďakujeme!</strong> Váša správa bola odoslaná, čoskoro sa Vám ozveme.</p>');
+						});
+					});
+				}
+				
+				return false;	
+			});
+		});
+
 	</script>
 </body>
 </html>
