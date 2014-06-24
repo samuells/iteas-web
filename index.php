@@ -1,3 +1,4 @@
+<?php if (substr_count($_SERVER['HTTP_ACCEPT_ENCODING'], 'gzip')) ob_start("ob_gzhandler"); else ob_start(); ?>
 <!DOCTYPE html>
 <html lang="sk" class="js cssanimations">
 <head>
@@ -11,7 +12,8 @@
 </head>
 <body>
 	<div class="nav">
-		<a href="#section_home"><img class="logo" src="img/logo_iteas.png"></a>
+		<!-- <a href="#section_home"><img class="logo" src="img/logo_iteas.png"></a> -->
+		<a href="#section_home" class="isprite logo"></a>
 		<ul id="top-menu">
 			<li><a href="#section_service">SLUŽBY</a></li>
 			<li><a href="#section_reference">REFERENCIE</a></li>
@@ -201,7 +203,7 @@
 						<input name="name" id="left" class="requiredField <?php if($nameError != '') { echo 'error'; }?>" type="text"  placeholder="<?php if($nameError != ''){ echo $nameError;} else { echo 'Vaše meno (Povinné)';}?>" <?php if(isset($_POST['name'])) echo 'value="'.$_POST['name'].'"';?>/>
 						<input name="email" id="right" class="requiredField <?php if($emailError != '') { echo 'error'; }?>" type="email" placeholder="<?php if($emailError != ''){ echo $emailError;} else { echo 'Váš email (Povinné)';}?>" <?php if($emailError == '' && isset($_POST['email'])) echo 'value="'.$_POST['email'].'"';?>/>
 						<textarea name="message" id="message" class="requiredField <?php if($messageError != '') { echo 'error'; }?>" placeholder="<?php if($messageError != ''){ echo $messageError;} else { echo 'Vaša správa (Povinná)';}?>"><?php if($message!='') echo $message;?></textarea>
-						<button type="submit" name="submit"><img src="img/mail.png">ODOSLAŤ</button>
+						<button type="submit" name="submit"><div class="isprite mail"></div>ODOSLAŤ</button>
 						<input type="hidden" name="submitted" id="submitted" value="true" />
 					</form>
 				<?php } ?>
@@ -217,7 +219,7 @@
 						<a href="#section_contact">KONTAKT</a>
 					</span>
 
-					<span id="center"></span>
+					<span id="center"><div class="isprite logo_bw"></div></span>
 
 					<span id="right">
 						<span>ITEAS, s.r.o.</span><br>Kladnianska 34<br>821 05 • Bratislava<br>IČO: 46129472<br>DIČ: 2023260338
@@ -236,12 +238,12 @@
 		    	<a target="_blank" href="https://maps.google.com?daddr=Kladnianska+34,+821+05+Bratislava,+Slovakia">
 					<div class="arrow-down"></div>
 					<div class="label">
-						<span id="logo_rv"></span><span id="address"><strong>ITEAS, s.r.o.</strong><br>Kladnianska 34<br>821 05 Bratislava<br><em>iteas@iteas.sk</em></span>
+						<span class="isprite logo_label"></span><span id="address"><strong>ITEAS, s.r.o.</strong><br>Kladnianska 34<br>821 05 Bratislava<br><em>iteas@iteas.sk</em></span>
 					</div>
 					<div class="cover_label">
 					</div>
 					<div class="direction_label">
-						<p>Navigovať k nám</p>
+						<p><span class="isprite direction_arrow"></span></p><p>Navigovať k nám</p>
 					</div>
 				</a>
 			</div>
@@ -337,7 +339,6 @@
 
 		$(document).ready(function() {
 			$('form').submit(function() {
-				console.log('kua');
 				$('form .error').removeClass('error');
 				var hasError = false;
 				$('.requiredField').each(function() {
