@@ -3,8 +3,8 @@
 <html lang="sk" class="js cssanimations">
 <head>
 	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 	<title>iteas</title>
-	<link href="css/normalize.css" rel="stylesheet">
 	<link href="css/iteas.css" rel="stylesheet">
 	<!-- External links -->
 	<link href='http://fonts.googleapis.com/css?family=Roboto:300,400,700' rel='stylesheet' type='text/css'>
@@ -12,7 +12,6 @@
 </head>
 <body>
 	<div class="nav">
-		<!-- <a href="#section_home"><img class="logo" src="img/logo_iteas.png"></a> -->
 		<a href="#section_home" class="isprite logo"></a>
 		<ul id="top-menu">
 			<li><a href="#section_service">SLUŽBY</a></li>
@@ -255,7 +254,10 @@
 	<script>
 		var element = document.getElementsByName("banner");
 		element[0].setAttribute("style", "background-image:url('img/cover"+Math.floor(Math.random()*3)+".png');");
-		var s = skrollr.init();
+		var s = skrollr.init({mobileCheck: function() {
+                //hack - forces mobile version to be off
+                return false;
+            }});
 		skrollr.menu.init(s,{
 			duration: function(currentTop, targetTop) {
 		        return Math.abs(currentTop - targetTop) / 2.5;}
@@ -311,7 +313,12 @@
 			scrollwheel:false,
 			styles:[{"featureType":"all","elementType":"all","stylers":[{"invert_lightness":true},{"saturation":10},{"lightness":30},{"gamma":0.5},{"hue":"#435158"}]}]
 		}
-		var map = new google.maps.Map(map_canvas, map_options)
+		var map = new google.maps.Map(map_canvas, map_options);
+		if((/Android|iPhone|iPod|BlackBerry/i).test(navigator.userAgent || navigator.vendor || window.opera)){
+			map.setOptions({draggable: false, zoom: 12});
+		} else if (false && (/iPad/i).test(navigator.userAgent || navigator.vendor || window.opera)) {
+			map.setOptions({draggable: false, zoom: 1});
+		}
 		// centering
 		var center;
 			function calculateCenter() {
