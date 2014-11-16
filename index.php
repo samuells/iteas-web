@@ -24,33 +24,41 @@
 		<!-- need to be refactor -->
 		<div id="section_home" class="flash">
 				<div class="cover" name="banner"></div>
-				<div class="title">
-					<h1><strong>OUTSOURCING</strong><br><em>IT</em> INFRAŠTRUKTÚRY</h1>
-					<h2>Lorem ipsum dolor sit amet, appetere<br> adipiscing in sea, his te persius</h2>
+				<div class="title" id="title">
+<!-- 					<h1><strong>OUTSOURCING</strong><br><em>IT</em> INFRAŠTRUKTÚRY</h1>
+					<h2>Komplexná správa IT pre malé až stredne veľké podniky a organizácie</h2> -->
 				</div>
 		</div>
 		<!-- end -->
 		<div id="section_service" data-menu-offset="-56" class="section service">
 			<div class="pane">
 				<h1>SLUŽBY</h1>
-				<div id="dashed">Naše služby sú poskytované našim tímom s dlhoročnými <em>skúsenosťami</em>.</div>
+				<div id="dashed">Naša spoločnosť poskytuje flexibilné, cieľavedomé a <em>komplexné riešenia</em> v oblasti správy, managementu a vývoja informačných systémov.</div>
 			</div>
 			<div id="boxes">
 				<!-- <span class="box" id="outsourcing"> -->
 				<span class="box">
 					<div class="sprite outsourcing"></div>
 					<div class="top_dashed">Outsorcing<br>IT infraštruktúry</div>
-					<div class="info">Lorem ipsum dolor sit amet, appetere adipiscing in sea, his te persius elaboraret, pri alia velit impedit te.</div>
+					<div class="info">Outsourcing IT zahŕňa prevádzkovanie a budovanie IT infraštruktúr pre malé az stredne veľké spoločnosti a organizácie. Prioritou je zabezpečiť plynulý chod informačných technologií/procesov pravideľnou a dôslednou údržbou/servisom. Náš tím odborníkov dokáže rýchlo a efektívne zhodnotiť stav IT vo Vašej spoločnosti a následne, na základe analýzy, navrhnúť a implementovať riešenie, ktoré bude dostatočne zabezpečovať Vaše potreby. Naša spoločnost je platformovo a produktovo úplne nezávislá a snaží sa nájst riešenie, ktoré je pre zákazníka potrebné a cenovo dostupné. Takisto zabezpečujeme riešenia spojené s prevádzkou komunikačných a kamerových zariadení.Sluzby, ktore poskytujeme vrami IT outsourcingu:
+analyza, navrh a implementacia IT infrastuktury
+prevadzka a udrzba IT infrastruktury
+dodavka IT infrastruktury
+zalohovanie a obnova dat
+
+V pripade moznej spoluprace nas nevahajte kontaktovat pomocou sekcie KONTAKT (href).</div>
 				</span>
 				<span class="box">
 					<div class="sprite security"></div>
 					<div class="top_dashed">Bezpečnoť<br>IT infraštruktúry</div>
-					<div class="info">Lorem ipsum dolor sit amet, appetere adipiscing in sea, his te persius elaboraret, pri alia velit impedit te.</div>
+					<div class="info">V dnesnej dobe je bezpecnost informacnych technologii neodmyslitelnou sucastou podnikatelskeho prostredia. Nasa spolocnost sa od zaciatku tvorby navrhu IT infrastruktur pre klientov detaile zaobera bezpecnostnym hladiskom a bezpecnostnou politikou.</div>
 				</span>
 				<span class="box">
 					<div class="sprite dev"></div>
 					<div class="top_dashed">Vývoj informačných<br>systémov</div>
-					<div class="info">Lorem ipsum dolor sit amet, appetere adipiscing in sea, his te persius elaboraret, pri alia velit impedit te.</div>
+					<div class="info">Spolocnost ITEAS, s.r.o. plnohodnotne pokryva cely proces tvorby informacnych systemov na mieru od analyzy problemu a navrhu riesenia, cez implmentaciu a testovanie, az po konecne realne nasadenie a nasledne administrovanie a udrzbu systemu. Drviva vacsina nasich projektov je realizovana formou webovej sluzby/aplikacie, cim sa vytvori multiplatformovy nezavisly system dostupny pre zakaznika odkialkolvek.
+
+V pripade moznej spoluprace nas nevahajte kontaktovat pomocou sekcie KONTAKT (href).</div>
 				</span>
 			</div>
 		</div>
@@ -109,16 +117,8 @@
 			</div>
 			<div id="articles">
 				<article>
-					<img src="img/pic1.png">
-					<div class="article">Id cibo eius honestatis qui, no has gubergren adolescens. Sea in constituam scriptorem, etiam doctus ei sea. In eum probo <em>adipiscing definiebas</em>, stet purto comprehensam in vel, graeci fierent voluptaria id duo. Assentior interpretaris ad per. An nec amet qualisque, simul soluta eu mel, meis <em>perfecto</em> eam no.</div>
-				</article>
-				<article>
-					<img src="img/pic2.png">
-					<div class="article">Id cibo eius honestatis qui, no has gubergren adolescens. Sea in constituam scriptorem, etiam doctus ei sea. In eum probo adipiscing definiebas, stet <em>purto comprehensam</em> in vel, graeci fierent voluptaria id duo. Assentior interpretaris ad per. An nec amet qualisque, simul soluta eu mel, meis perfecto eam no.</div>
-				</article>
-				<article>
-					<img src="img/pic3.png">
-					<div class="article">Id cibo eius honestatis qui, no has gubergren adolescens. <em>Sea in</em> constituam scriptorem, etiam doctus ei sea. In eum probo adipiscing definiebas, stet purto comprehensam in vel, graeci fierent voluptaria id duo. Assentior interpretaris ad per. An nec amet qualisque, simul <em>soluta eu mel</em>, meis perfecto eam no.</div>
+					<!-- <img src="img/pic1.png"> -->
+					<div style="text-align:justify;" class="article">Spoločnosť ITEAS, s.r.o. bola založená v roku 2011 s cieľom poskytovať služby v oblasti budovania a spravovania interných firemných počítačových sietí. Postupom času a reizáciou mnohých projektov spoločnosť rozšírila svoje sľužby s dôrazom na vývoj informačných systémov a v dnešnej dobe je z nej mladá a dravá spoločnosť, ktorá je solídnym poskytovateľom informačných technológií a služieb vrámci celého slovenského regiónu.</div>
 				</article>
 			</div>
 		</div>
@@ -253,7 +253,16 @@
     <script src="js/skrollr.menu.min.js"></script>
 	<script>
 		var element = document.getElementsByName("banner");
-		element[0].setAttribute("style", "background-image:url('img/cover"+Math.floor(Math.random()*3)+".png');");
+		var number = Math.floor(Math.random()*3);
+		element[0].setAttribute("style", "background-image:url('img/cover"+number+".png');");
+
+		var title = document.getElementById("title");
+	    title.innerHTML = number === 0 ? 
+	    	"<h1><strong>OUTSOURCING</strong><br><em>IT</em> INFRAŠTRUKTÚRY</h1><h2>Komplexná správa IT pre malé až stredne veľké podniky a organizácie</h2>"
+	    	: number === 1 ? "<h1><strong>BEZPEČNOSŤ</strong><br><em>IT</em> INFRAŠTRUKTÚRY</h1><h2>Poskytujeme komplexné bezpečnostné IT riešenie pre Vašu spoločnosť</h2>"
+	    	: "<h1><strong>VÝVOJ</strong><br>INFORMAČNÝCH <em>SYSTÉMOV</em></h1><h2>Poskytujeme kopmplexné služby spojené s analýzou a vývojom namieru šitých informačných systémov a webových aplikácií</h2>";
+
+
 		var s = skrollr.init({mobileCheck: function() {
                 //hack - forces mobile version to be off
                 return false;
