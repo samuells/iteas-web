@@ -255,13 +255,11 @@ V pripade moznej spoluprace nas nevahajte kontaktovat pomocou sekcie KONTAKT (hr
 		var element = document.getElementsByName("banner");
 		var number = Math.floor(Math.random()*3);
 		element[0].setAttribute("style", "background-image:url('img/cover"+number+".png');");
-
 		var title = document.getElementById("title");
 	    title.innerHTML = number === 0 ? 
 	    	"<h1><strong>OUTSOURCING</strong><br><em>IT</em> INFRAŠTRUKTÚRY</h1><h2>Komplexná správa IT pre malé až stredne veľké podniky a organizácie</h2>"
 	    	: number === 1 ? "<h1><strong>BEZPEČNOSŤ</strong><br><em>IT</em> INFRAŠTRUKTÚRY</h1><h2>Poskytujeme komplexné bezpečnostné IT riešenie pre Vašu spoločnosť</h2>"
 	    	: "<h1><strong>VÝVOJ</strong><br>INFORMAČNÝCH <em>SYSTÉMOV</em></h1><h2>Poskytujeme kopmplexné služby spojené s analýzou a vývojom namieru šitých informačných systémov a webových aplikácií</h2>";
-
 
 		var s = skrollr.init({mobileCheck: function() {
                 //hack - forces mobile version to be off
