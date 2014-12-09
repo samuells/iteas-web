@@ -254,7 +254,8 @@ V pripade moznej spoluprace nas nevahajte kontaktovat pomocou sekcie KONTAKT (hr
 	<script>
 		var element = document.getElementsByName("banner");
 		var number = Math.floor(Math.random()*3);
-		element[0].setAttribute("style", "background-image:url('img/cover"+number+".png');");
+		// element[0].setAttribute("style", "background-image:url('img/cover"+number+".png');");
+		element[0].setAttribute("style", "background-image:url('img/iteas_ilustracie.png');");
 		var title = document.getElementById("title");
 	    title.innerHTML = number === 0 ? 
 	    	"<h1><strong>OUTSOURCING</strong><br><em>IT</em> INFRAŠTRUKTÚRY</h1><h2>Komplexná správa IT pre malé až stredne veľké podniky a organizácie</h2>"

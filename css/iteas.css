@@ -145,8 +145,8 @@ button{
   position: absolute;
   top:0;
   left:0;
-  -webkit-filter: blur(5px);
-  filter: url(blur.svg#blur);
+  /*-webkit-filter: blur(5px);*/
+  /*filter: url(blur.svg#blur);*/
 /*  -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;*/
@@ -233,21 +233,29 @@ button{
 .bcg{
   height: 27em;
   padding-top: 9.5em;  
+  background-image: url("../img/iteas_ilustracie_2.png");
+  overflow:hidden;
+  -webkit-background-size: 100%;
+  background-size: 100%;
+  background-repeat:no-repeat;
 }
 
 /*parallax 1*/
 .scroll-1 .bcg {
-  background-image:url('../img/skroller.png');
+  /*background-image:url('../img/skroller.png');*/
+  background-position: 0px 0px;
 }
 
 /*parallax 2*/
 .scroll-2 .bcg {
-  background-image:url('../img/skroller2.png');
+  /*background-image:url('../img/skroller2.png');*/
+  background-position: 0px 33%;
 }
 
 /*parallax 3*/
 .scroll-3 .bcg {
-  background-image:url('../img/skroller3.png');
+  /*background-image:url('../img/skroller3.png');*/
+  background-position: 0px 66%;
 }
 
 .scroll .cit{
